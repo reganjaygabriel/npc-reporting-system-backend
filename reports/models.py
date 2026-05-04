@@ -1019,8 +1019,9 @@ class Document(models.Model):
     document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPES)
     file_path = models.FileField(upload_to='documents/%Y/%m/', null=True, blank=True)
     content = models.TextField(blank=True, help_text="Document content if not file-based")
+    description = models.TextField(blank=True, help_text="Document description")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='DRAFT')
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_documents')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_documents', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

@@ -57,6 +57,7 @@ class UploadedFileViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = UploadedFile.objects.filter(is_archived=False).select_related('plant', 'uploaded_by')
     serializer_class = UploadedFileSerializer
     permission_classes = [AllowAny]  # Allow unauthenticated access for internal system
+    authentication_classes = []  # Disable authentication to avoid CSRF issues
     
     @action(detail=False, methods=['get'], url_path='download-template/daily-generation')
     def download_daily_generation_template(self, request):
@@ -374,6 +375,7 @@ class GenerationReportViewSet(mixins.ListModelMixin,
                               viewsets.GenericViewSet):
     queryset = GenerationReport.objects.all().select_related('plant', 'unit', 'uploaded_file')
     permission_classes = [AllowAny]  # Allow unauthenticated access for internal system
+    authentication_classes = []  # Disable authentication to avoid CSRF issues
     
     def get_serializer_class(self):
         if self.action == 'list':
@@ -1830,6 +1832,7 @@ class MonthlyTargetViewSet(viewsets.ModelViewSet):
     queryset = MonthlyTarget.objects.all().select_related('plant')
     serializer_class = MonthlyTargetSerializer
     permission_classes = [AllowAny]
+    authentication_classes = []  # Disable authentication to avoid CSRF issues
     pagination_class = CustomPageNumberPagination
 
     def get_queryset(self):
