@@ -1,0 +1,23 @@
+Django==4.2.7
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.0
+pandas>=2.0.0
+openpyxl>=3.1.5
+django-cors-headers==4.3.1
+python-dotenv==1.0.0
+reportlab==4.0.7
+celery==5.3.4
+redis==5.0.1
+django-celery-beat==2.5.0
+pillow>=10.2.0
+requests>=2.31.0
+psycopg2-binary>=2.9.9
+dj-database-url>=2.1.0
+gunicorn>=21.2.0
+
+# Email support (using console backend for development)
+# For production, configure SMTP settings in settings.py
+
+# Signature Security Dependencies
+cryptography>=41.0.0  # For encryption and digital signatures
+pyotp>=2.9.0  # For 2FA/OTP generation
