@@ -4431,3 +4431,9 @@ Request path: /api/signatory-authorizations/my-authorizations/
 Args: ()
 Kwargs: {}
 ==================================================
+DISPATCH METHOD CALLED! Time: 2026-05-04 03:20:56.029944+00:00
+Request method: GET
+Request path: /api/signatory-authorizations/my-authorizations/
+Args: ()
+Kwargs: {}
+==================================================
